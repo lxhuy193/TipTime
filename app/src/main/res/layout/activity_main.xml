@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <EditText
+        android:id="@+id/et_cost"
+        android:hint="Cost of Service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"/>
+    <TextView
+        android:id="@+id/tv_question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How was the service?"/>
+
+    <RadioGroup
+        android:checkedButton="@id/rbtn_20"
+        android:id="@+id/rbtng_tipOption"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tv_question"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rbtn_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amazing 20%"/>
+        <RadioButton
+            android:id="@+id/rbtn_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Great 15%"/>
+        <RadioButton
+            android:id="@+id/rbtn_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal 10%"/>
+    </RadioGroup>
+    <Switch
+        android:id="@+id/swbtn_roundup"
+        android:checked="true"
+        android:text="Do you want to round up?"
+        app:layout_constraintTop_toBottomOf="@+id/rbtng_tipOption"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_calculate"
+        android:text="CALCULATE"
+        app:layout_constraintTop_toBottomOf="@+id/swbtn_roundup"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="24dp"
+        android:id="@+id/tv_total"
+        android:text="Total tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_calculate"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:textSize="32dp"
+        android:textColor="@color/black"
+        android:id="@+id/tv_totalbill"
+        android:text="Total bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_total"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
